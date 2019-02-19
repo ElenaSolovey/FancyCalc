@@ -31,9 +31,30 @@ namespace FancyCalc
         //generic calc method. usage: "10 + 20"  => result 30
         public double Culculate(string expression)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+            string[] words = expression.Split(new char[] { ' ', '+', '-', '*' }, StringSplitOptions.RemoveEmptyEntries);
+            double a = Double.Parse(words[0]);
+            double b = Double.Parse(words[1]);
 
-
-        }
+            int indexOFChar1 = expression.IndexOf('+');
+            int indexOFChar2 = expression.IndexOf('-');
+            int indexOFChar3 = expression.IndexOf('*');
+            if (indexOFChar1 > 0)
+            {
+                return Add(a, b);
+            }
+            else if (indexOFChar2 > 0)
+            {
+                return Subtract(a, b);
+            }
+            else if (indexOFChar3 > 0)
+            {
+                return Multiply(a, b);
+            }
+            else { 
+            Console.Write("Error");
+            return 0;
+               }
+         }
     }
 }

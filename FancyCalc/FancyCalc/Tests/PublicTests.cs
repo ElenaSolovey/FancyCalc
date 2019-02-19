@@ -17,6 +17,39 @@ namespace FancyCalc
         }
 
         [Test]
+        public void MultiplyTest()
+        {
+            FancyCalcEnguine calc = new FancyCalcEnguine();
+            double expected = 36;
+            double actual = calc.Multiply(3, 12);
+            Assert.AreEqual(expected, actual);
+        }
+
+
+        [Test]
+        public void CalculateTest()
+        {
+            FancyCalcEnguine calc = new FancyCalcEnguine();
+            double expected = 4;
+            double actual = calc.Culculate("2 + 2");
+            Assert.AreEqual(expected, actual);
+        }
+
+
+
+
+        [Test]
+        public void CalculateTest2()
+        {
+            FancyCalcEnguine calc = new FancyCalcEnguine();
+            double expected = 4;
+            double actual = calc.Culculate("2+2");
+            Assert.AreEqual(expected, actual);
+        }
+
+
+
+        [Test]
         public void SubtractTest()
         {
             var calc = new FancyCalcEnguine();
