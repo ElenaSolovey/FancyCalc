@@ -31,7 +31,9 @@ namespace FancyCalc
         //generic calc method. usage: "10 + 20"  => result 30
         public double Culculate(string expression)
         {
-            //throw new NotImplementedException();
+            if (expression == null)
+                throw new ArgumentNullException();
+
             string[] words = expression.Split(new char[] { ' ', '+', '-', '*' }, StringSplitOptions.RemoveEmptyEntries);
             double a = Double.Parse(words[0]);
             double b = Double.Parse(words[1]);
